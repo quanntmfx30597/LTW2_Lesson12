@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICT-VID – Trang web xem video miễn phí</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="logo">ICT-VID</a>
+    </header>
+
+    <main class="page">
+      <section class="intro">
+        <h1>Trang web xem video miễn phí</h1>
+
+        <p>Đăng nhập</p>
+        <button type="button" id="btnHienDangNhap" class="btn btn-primary">
+          Đăng nhập
+        </button>
+
+        <p>Nếu bạn chưa có tài khoản - Đăng kí tại đây</p>
+        <button type="button" id="btnHienDangKy" class="btn btn-secondary">
+          Đăng kí
+        </button>
+
+        <p>
+          Xem video trực tuyến<br />
+          <a href="homepage.html">Tại đây</a>
+        </p>
+      </section>
+
+      <section class="panel">
+        <p id="thongBao" class="message" hidden></p>
+
+        <!-- Bước 2: form đăng nhập -->
+        <div id="khungDangNhap">
+          <form id="loginForm" class="card-form">
+            <h2>Đăng nhập</h2>
+
+            <div class="field">
+              <label for="username">Tài khoản:</label>
+              <input type="text" id="username" name="username" required />
+            </div>
+
+            <div class="field">
+              <label for="password">Mật khẩu:</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+
+            <div class="show-password">
+              <input type="checkbox" id="hienmatkhau" />
+              <label for="hienmatkhau">Hiện mật khẩu</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              Đăng nhập
+            </button>
+          </form>
+
+          <section id="thongtin" class="result" hidden>
+            <h3>Thông tin vừa nhập</h3>
+            <p>Tài khoản: <span id="tennguoidung"></span></p>
+            <p>Mật khẩu: <span id="matkhau"></span></p>
+          </section>
+        </div>
+
+        <!-- Bước 3 : form đăng kí -->
+        <div id="khungDangKy" hidden>
+          <form id="registerForm" class="card-form">
+            <h2>Đăng kí tài khoản</h2>
+
+            <div class="field">
+              <label for="hoTen">Họ và tên:</label>
+              <input
+                type="text"
+                id="hoTen"
+                name="hoTen"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="ngaySinh">Ngày sinh:</label>
+              <input type="date" id="ngaySinh" name="ngaySinh" required />
+            </div>
+
+            <div class="field">
+              <label for="gioiTinh">Giới tính:</label>
+              <select id="gioiTinh" name="gioiTinh">
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+                <option value="Khác">Khác</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="soDienThoai">Số điện thoại:</label>
+              <input
+                type="tel"
+                id="soDienThoai"
+                name="soDienThoai"
+                pattern="0[0-9]{9}"
+                title="Số điện thoại gồm 10 chữ số, bắt đầu bằng 0"
+                autocomplete="tel"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="taiKhoan">Tài khoản:</label>
+              <input
+                type="text"
+                id="taiKhoan"
+                name="taiKhoan"
+                autocomplete="username"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="matKhauDk">Mật khẩu:</label>
+              <input
+                type="password"
+                id="matKhauDk"
+                name="matKhauDk"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="nhapLaiMatKhau">Nhập lại mật khẩu:</label>
+              <input
+                type="password"
+                id="nhapLaiMatKhau"
+                name="nhapLaiMatKhau"
+                autocomplete="new-password"
+                required
+              />
+              <p id="loiMatKhau" class="error" hidden>
+                Mật khẩu nhập lại chưa khớp.
+              </p>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              Đăng kí
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      Liên hệ: 0123456789<br />
+      Hòm thư điện tử: fakemail@fmail.com
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

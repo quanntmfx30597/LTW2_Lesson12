@@ -1,0 +1,329 @@
+/* ===== Màu dùng chung ===== */
+:root {
+  --xanh: #0b57a4;
+  --xanh-dam: #084282;
+  --xanh-la: #8cc63f;
+  --hong: #d6338a;
+  --nen: #eef3f9;
+  --chu: #1b2733;
+  --chu-nhat: #5b6b7b;
+  --vien: #c4d0dd;
+  --loi: #c62828;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--nen);
+  color: var(--chu);
+  font-family: "Segoe UI", system-ui, Roboto, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+/* ===== Header ===== */
+.site-header {
+  position: relative;
+  background: var(--xanh);
+  padding: 14px 24px;
+}
+
+/* Dải 3 màu dưới thanh tiêu đề */
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--xanh-la) 0 60%,
+    var(--hong) 60% 100%
+  );
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: var(--xanh);
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  font-size: 15px;
+}
+
+/* ===== Trang chính: 2 cột ===== */
+.page {
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 40px 16px;
+}
+
+/* ===== Cột trái ===== */
+.intro {
+  flex: 1;
+  min-width: 260px;
+  max-width: 440px;
+}
+
+.intro h1 {
+  margin: 0 0 16px;
+  font-size: 30px;
+  color: var(--xanh);
+}
+
+.intro p {
+  margin: 20px 0 8px;
+  color: var(--chu-nhat);
+}
+
+.intro .btn {
+  width: 220px;
+}
+
+.intro a {
+  color: var(--xanh);
+}
+
+/* ===== Cột phải ===== */
+.panel {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== Nút ===== */
+.btn {
+  height: 46px;
+  padding: 0 20px;
+  font: inherit;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1.5px solid var(--xanh);
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btn-primary {
+  background: var(--xanh);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--xanh-dam);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--xanh);
+}
+
+.btn-secondary:hover {
+  background: #e6eef8;
+}
+
+.btn:focus-visible,
+input[type="checkbox"]:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--hong);
+  outline-offset: 2px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ===== Form đăng nhập và đăng kí ===== */
+.card-form {
+  position: relative;
+  padding: 30px 26px 24px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(11, 87, 164, 0.12);
+  overflow: hidden;
+}
+
+/* Dải 3 màu phía trên form */
+.card-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--xanh) 0 60%,
+    var(--xanh-la) 60% 80%,
+    var(--hong) 80% 100%
+  );
+}
+
+.card-form h2 {
+  margin: 0 0 22px;
+  color: var(--xanh);
+  font-size: 23px;
+}
+
+/* Mỗi nhóm gồm nhãn và ô nhập */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  font: inherit;
+  color: var(--chu);
+  background: #fff;
+  border: 1.5px solid var(--vien);
+  border-radius: 8px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--xanh);
+  box-shadow: 0 0 0 4px rgba(11, 87, 164, 0.18);
+}
+
+/* ===== Hiện mật khẩu ===== */
+.show-password {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 20px;
+}
+
+.show-password label {
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--chu-nhat);
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--xanh);
+  cursor: pointer;
+}
+
+/* ===== Khung thông tin vừa nhập ===== */
+.result {
+  margin-top: 20px;
+  padding: 18px 22px;
+  background: #fff;
+  border-radius: 14px;
+  border-left: 6px solid var(--xanh-la);
+  box-shadow: 0 6px 24px rgba(11, 87, 164, 0.12);
+  overflow-wrap: anywhere;
+}
+
+.result h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  color: var(--xanh);
+}
+
+.result p {
+  margin: 4px 0;
+}
+
+/* ===== Thông báo và lỗi ===== */
+.error {
+  margin: 4px 0 0;
+  color: var(--loi);
+  font-size: 14px;
+}
+
+.message {
+  margin: 0;
+  padding: 12px 16px;
+  color: #236b2b;
+  background: #e5f5e7;
+  border: 1px solid #a9d8ad;
+  border-radius: 8px;
+}
+
+/* ===== Trang xem video ===== */
+.video-page {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 35px 16px;
+}
+
+.video-page h1 {
+  color: var(--xanh);
+}
+
+.video-page a {
+  color: var(--xanh);
+}
+
+/* Lưới video */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.video-grid iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+/* Điện thoại: thẻ bớt khoảng đệm */
+@media (max-width: 480px) {
+  .card-form {
+    padding: 24px 20px 20px;
+  }
+}
+
+/* Bảo đảm phần tử có hidden luôn được ẩn */
+[hidden] {
+  display: none !important;
+}
